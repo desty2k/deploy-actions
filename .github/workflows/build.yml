@@ -45,7 +45,7 @@ jobs:
 
     - name: Get package version
       run: |
-        python qrainbowstyle --version > version.txt
+        python app --version > version.txt
         echo "VERSION=$(cat version.txt)" | tr -d '\r\t\n' >> $GITHUB_ENV
 
     - name: Get latest version
