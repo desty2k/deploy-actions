@@ -66,12 +66,12 @@ jobs:
         echo "${{env.RELEASE_VERSION}}"
 
     - name: Create first release
-        if: env.RELEASE_VERSION == ""
-        uses: actions/create-release@v1.1.4
-        with:
-          tag_name: ${{ env.VERSION }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+      if: env.RELEASE_VERSION == ""
+      uses: actions/create-release@v1.1.4
+      with:
+        tag_name: ${{ env.VERSION }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
     
     - name: Create a release
       if: env.VERSION != env.RELEASE_VERSION && env.RELEASE_VERSION != ""
