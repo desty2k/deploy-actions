@@ -44,7 +44,7 @@ jobs:
     - name: Get package version
       run: |
         python app --version > version.txt
-        echo "VERSION=$(cat version.txt)" | tr -d '\r\t\n' >> $GITHUB_ENV
+        echo "BUILD_VERSION=$(cat version.txt)" | tr -d '\r\t\n' >> $GITHUB_ENV
 
     - name: Get latest version
       id: get_latest_version
