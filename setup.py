@@ -7,7 +7,7 @@ setup(
     name='deploy-actions',
     version=__version__,
     packages=find_packages(),
-    url='',
+    url='https://github.com/desty2k/deploy-actions',
     license='MIT',
     author='Wojciech desty2k Wentland',
     author_email='wojciech.wentland@int.pl',
@@ -19,7 +19,7 @@ setup(
     zip_safe=False,
 
     project_urls={
-        'Issues': '',
-        'Docs': '',
+        'Issues': 'https://github.com/desty2k/deploy-actions/issues',
+        'Docs': 'https://desty2k.github.io/deploy-actions/',
     }
 )
