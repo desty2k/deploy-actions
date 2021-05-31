@@ -2,9 +2,7 @@ name: build
 
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches: [ master, develop ]
 
 jobs:
   build:
@@ -14,7 +12,7 @@ jobs:
       max-parallel: 2
       matrix:
         platform: [ubuntu-latest]
-        python-version: [3.9]
+        python-version: [3.5, 3.9]
 
     steps:
     - uses: actions/checkout@v2
@@ -61,28 +59,28 @@ jobs:
     - name: Echo environment variables
       run: |
         echo "Uploaded package version is: "
-        echo "${{env.VERSION}}"
+        echo "${{env.BUILD_VERSION}}"
         echo "Latest package version is:"
         echo "${{env.RELEASE_VERSION}}"
 
-    - name: Create first release
-      if: env.RELEASE_VERSION == ''
-      uses: actions/create-release@v1.1.4
+    - name: Generate changelog
+      if: env.BUILD_VERSION != env.RELEASE_VERSION
+      id: changelog
+      uses: heinrichreimer/github-changelog-generator-action@v2.1.1
       with:
-        tag_name: ${{ env.VERSION }}
-      env:
-        GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        token: ${{ secrets.DEPLOY_TOKEN }}
     
     - name: Create a release
-      if: env.VERSION != env.RELEASE_VERSION && env.RELEASE_VERSION != ''
+      if: env.BUILD_VERSION != env.RELEASE_VERSION
       
-      uses: actions/create-release@v1.1.4
+      uses: softprops/action-gh-release@v1
       with:
-        tag_name: ${{ env.VERSION }}
+        body: ${{ steps.changelog.outputs.changelog }}
+        tag_name: ${{ env.BUILD_VERSION }}
       env:
         GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
      
     - name: Skip release
-      if: env.VERSION == env.RELEASE_VERSION
+      if: env.BUILD_VERSION == env.RELEASE_VERSION
       run: |
         echo "Skipping because version does not changed"
