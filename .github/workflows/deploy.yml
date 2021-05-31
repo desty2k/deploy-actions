@@ -10,7 +10,6 @@ jobs:
   deploy-pypi-test:
     name: Deploy to PyPI test server
     runs-on: ubuntu-latest
-    needs: [get-release-tag]
 
     steps:
     - uses: actions/checkout@v2
@@ -56,7 +55,6 @@ jobs:
   deploy-docker:
     name: Create and publish Docker image
     runs-on: ubuntu-latest
-    needs: [get-release-tag]
 
     steps:
       - name: Docker meta
