@@ -8,6 +8,9 @@ on:
 
 jobs:
   get-release-tag:
+    name: Get release tag
+    runs-on: ubuntu-latest
+
     steps:
     - name: Get latest version
       run: |
