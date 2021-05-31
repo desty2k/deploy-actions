@@ -87,8 +87,8 @@ jobs:
         with:
           push: true
           tags: |
-            desty2k/QtPyBotnet:latest
-            desty2k/QtPyBotnet:${{env.RELEASE_VERSION}}
+            desty2k/deploy-actions:latest
+            desty2k/deploy-actions:${{env.RELEASE_VERSION}}
           platforms: linux/amd64,linux/arm64,linux/386
 
       - name: Image digest
