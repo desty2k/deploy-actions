@@ -1,6 +1,8 @@
 deploy-actions
 ==============
 
+|Build Status| |Docs Status| |License: MIT|
+
 CI/CD for Python apps.
 
 Deployments:
@@ -19,3 +21,10 @@ Required secrets:
 - PYPI_PASSWORD
 - DOCKERHUB_USERNAME
 - DOCKERHUB_TOKEN
+
+.. |Build Status| image:: https://github.com/desty2k/deploy-actions/workflows/build/badge.svg
+   :target: https://github.com/desty2k/deploy-actions/actions?workflow=build
+.. |Docs Status| image:: https://github.com/desty2k/deploy-actions/workflows/docs/badge.svg
+   :target: https://desty2k.github.io/deploy-actions/
+.. |License: MIT| image:: https://img.shields.io/dub/l/vibe-d.svg?color=lightgrey
+   :target: https://opensource.org/licenses/MIT
