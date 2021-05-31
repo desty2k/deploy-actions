@@ -1,0 +1,8 @@
+# Main packages to make sure they are there
+setuptools
+pip
+wheel
+
+# To generate documentation
+sphinx
+sphinx_rtd_theme
