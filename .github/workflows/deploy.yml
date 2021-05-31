@@ -32,6 +32,11 @@ jobs:
         echo "RELEASE_VERSION=$(cat release_version.txt)" | tr -d '\r\t\n' >> $GITHUB_ENV
         echo "${{env.RELEASE_VERSION}}"
 
+    - name: Echo environment variables
+      run: |
+        echo "Package version is:"
+        echo "${{env.RELEASE_VERSION}}"
+
   deploy-pypi-test:
     name: Deploy to PyPI test server
     runs-on: ubuntu-latest
@@ -103,7 +108,7 @@ jobs:
           push: true
           tags: |
             desty2k/deploy-actions:latest
-            desty2k/deploy-actions:${{env.RELEASE_VERSION}}
+            desty2k/deploy-actions:"${{env.RELEASE_VERSION}}"
           platforms: linux/amd64,linux/arm64,linux/386
 
       - name: Image digest
