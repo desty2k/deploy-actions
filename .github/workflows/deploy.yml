@@ -43,7 +43,7 @@ jobs:
         twine upload --repository testpypi --skip-existing --verbose dist/*
 
   deploy-pypi:
-    needs: [deploy-test]
+    needs: [deploy-pypi-test]
     name: Deploy to PyPI
     runs-on: ubuntu-latest
 
