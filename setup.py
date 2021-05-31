@@ -15,7 +15,7 @@ setup(
     long_description=long_desc,
     long_description_content_type='text/x-rst',
 
-    python_requires='>=3.8',
+    python_requires='>=3.5',
     zip_safe=False,
 
     project_urls={
