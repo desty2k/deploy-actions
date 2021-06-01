@@ -31,7 +31,7 @@ Required secrets:
 .. |Docs Status| image:: https://img.shields.io/github/workflow/status/desty2k/deploy-actions/docs?label=docs&style=flat-square
    :target: https://desty2k.github.io/deploy-actions/
 .. |Deploy Status| image:: https://img.shields.io/github/workflow/status/desty2k/deploy-actions/deploy?label=deploy&style=flat-square
-   :target: https://github.com/desty2k/deploy-actions/actions?workflow=build
+   :target: https://github.com/desty2k/deploy-actions/actions?workflow=deploy-pypi
 
 .. |PyPI Downloads| image:: https://img.shields.io/pypi/dd/deploy-actions?label=PyPI%20Downloads&style=flat-square
    :target: https://pypi.org/project/deploy-actions/
