@@ -1,16 +1,20 @@
 deploy-actions
 ==============
 
-|Build Status| |Docs Status| |License: MIT|
+|Build Status| |Docs Status| |Deploy Status|
 
-CI/CD for Python apps.
+|PyPI Downloads| |Docker Pulls|
+
+|License: MIT|
+
+Repository template with CI/CD for Python apps.
 
 Deployments:
 
 - Docs for GitHub Pages
 - Docker build and publish on DockerHub
-- PyPI test server
-- PyPI
+- PyPI test server publish
+- PyPI publish
 
 Required secrets:
 
@@ -22,9 +26,20 @@ Required secrets:
 - DOCKERHUB_USERNAME
 - DOCKERHUB_TOKEN
 
-.. |Build Status| image:: https://github.com/desty2k/deploy-actions/workflows/build/badge.svg
+.. |Build Status| image:: https://img.shields.io/github/workflow/status/desty2k/deploy-actions/build?style=flat-square
    :target: https://github.com/desty2k/deploy-actions/actions?workflow=build
-.. |Docs Status| image:: https://github.com/desty2k/deploy-actions/workflows/docs/badge.svg
+.. |Docs Status| image:: https://img.shields.io/github/workflow/status/desty2k/deploy-actions/docs?label=docs&style=flat-square
    :target: https://desty2k.github.io/deploy-actions/
-.. |License: MIT| image:: https://img.shields.io/dub/l/vibe-d.svg?color=lightgrey
+.. |Deploy Status| image:: https://img.shields.io/github/workflow/status/desty2k/deploy-actions/deploy?label=deploy&style=flat-square
+   :target: https://github.com/desty2k/deploy-actions/actions?workflow=build
+
+.. |PyPI Downloads| image:: https://img.shields.io/pypi/dd/deploy-actions?label=PyPI%20Downloads&style=flat-square
+   :target: https://pypi.org/project/deploy-actions/
+.. |Docker Pulls| image:: https://img.shields.io/docker/pulls/desty2k/deploy-actions?style=flat-square
+   :target: https://hub.docker.com/repository/docker/desty2k/deploy-actions
+
+.. |License: MIT| image:: https://img.shields.io/pypi/l/deploy-actions?color=lightgray&style=flat-square
    :target: https://opensource.org/licenses/MIT
+
+
+
