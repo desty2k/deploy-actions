@@ -14,11 +14,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+      - name: Generate a lowercase image name
+        id: image_name
+        uses: ASzc/change-string-case-action@v1
+        with:
+          string: ${{ github.repository }}
+
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: ${{ github.repository }}, ghcr.io/${{ github.repository }}
+          images: ${{ steps.image_name.outputs.lowercase }}, ghcr.io/${{ steps.image_name.outputs.lowercase }}
           tags: |
             type=ref,event=branch
             type=ref,event=pr
